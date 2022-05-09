@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Assign-04-HTML-Burger -->
+<html>
+  <head>
+  <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="description" content="User Input, with JavaScript">
+    <meta name="keywords" content="immaculata, ics2o">
+    <meta name="author" content="Me">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For the favicon on this page -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav1/favicon-16x16.png">
+    <link rel="manifest" href="./fav1/site.webmanifest">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Price Calculator</title>
+  </head>
+  <body>
+    <script src="./js/script.js"></script>
+    <center><h1>Rory's Non-Sketchy Online Burger Shop</h1></center>
+		<center><h3>Please enter your desired fixin's below!</h3></center>
+    <!-- Menu for patty selection -->
+		<form action="javascript:displayPrice()">					
+    <center><label for="days">Select number of patty's:</label>
+      <select name="days" id="days">
+        <optgroup label="Beef">
+          <option value="single">1 patty</option>
+          <option value="double">2 patty's</option>
+          <option value="triple">3 patty's</option>
+        </optgroup>
+        <optgroup label="New meats coming soon!">
+        </optgroup>
+      </select></center>
+      <br></br>
+    <!-- Topping checkbox's -->
+      <center><table>
+        <tr>
+          <td>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+          </td>
+          <td>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+          </td>
+        </tr>
+      </table></center>
+      <br></br>
+      <center><input type="submit" value="Calculate"></center>
+    </form>
+    <br></br>
+		<img src="./images/museum.jpg" alt="Museum" width="20%" height="20%''">
+		</table>
+		<!-- Create a space where the user information will be displayed -->
+			<div id="price">
+			</div>
+		</div>
+  </body>
+</html>

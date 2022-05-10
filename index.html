@@ -9,21 +9,25 @@
     <meta name="author" content="Me">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For the favicon on this page -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./fav1/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./fav1/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./fav1/favicon-16x16.png">
-    <link rel="manifest" href="./fav1/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/site.webmanifest">
     <link rel="stylesheet" href="./css/style.css">
     <title>Price Calculator</title>
   </head>
   <body>
+    <!-- MDL link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css" > 
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
-    <center><h1>Rory's Non-Sketchy Online Burger Shop</h1></center>
+    <center><h1>Rory's Online Burger Shop</h1></center>
 		<center><h3>Please enter your desired fixin's below!</h3></center>
     <!-- Menu for patty selection -->
 		<form action="javascript:displayPrice()">					
-    <center><label for="days">Select number of patty's:</label>
-      <select name="days" id="days">
+    <center><label for="patty"><h4>Select number of patty's:</h4></label>
+      <select name="patty" id="patty">
         <optgroup label="Beef">
           <option value="single">1 patty</option>
           <option value="double">2 patty's</option>
@@ -32,34 +36,58 @@
         <optgroup label="New meats coming soon!">
         </optgroup>
       </select></center>
-      <br></br>
-    <!-- Topping checkbox's -->
+    <!-- Topping checkbox's and header -->
+      <h4>Select desired toppings:</h4>
       <center><table>
         <tr>
           <td>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> I have a bike</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> I have a car</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3"> I have a boat</label>
+            <input type="checkbox" id="lettuce" name="lettuce" value="Topping">
+            <label for="lettuce"> Lettuce</label><br>
+            <input type="checkbox" id="tomato" name="tomato" value="Topping">
+            <label for="tomato"> Tomato</label><br>
+            <input type="checkbox" id="cheese" name="cheese" value="Topping">
+            <label for="vehicle3"> Cheese</label>
           </td>
           <td>
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> I have a bike</label><br>
+            <label for="vehicle1"> Bacon</label><br>
             <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> I have a car</label><br>
+            <label for="vehicle2"> Pickles</label><br>
             <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3"> I have a boat</label>
+            <label for="vehicle3"> Onions</label>
           </td>
         </tr>
       </table></center>
-      <br></br>
-      <center><input type="submit" value="Calculate"></center>
+      <!-- Condiment check boxes and header -->
+      <h4>Select desired condiments:</h4>
+      <center>
+      <input type="checkbox" id="lettuce" name="lettuce" value="Topping">
+      <label for="lettuce"> Ketchup</label><br>
+      <input type="checkbox" id="tomato" name="tomato" value="Topping">
+      <label for="tomato"> Mustard</label><br>
+      <input type="checkbox" id="cheese" name="cheese" value="Topping">
+      <label for="vehicle3"> Relish‎ ‎ ‎ ‎ </label>
+      </center>  
+      <!-- Combo Radiobutton and header -->
+      <h4>Would you like to make it a combo (add drink and fries)?</h4>
+      <center><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+        <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+        <span class="mdl-radio__label">Yes!</span>
+      </label></center>
+      <center><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+        <span class="mdl-radio__label">No‎ ‎ ‎ ‎ </span>
+      </label></center>
+      </br>
+      <!-- Combo image -->
+      <center><img src="./images/combo.png" alt="Museum" width="20%" height="20%"></center>
+      </br>
+      <!-- Calculate MDL button -->
+      <center><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Calculate Price
+</button>
+</center>
     </form>
-    <br></br>
-		<img src="./images/museum.jpg" alt="Museum" width="20%" height="20%''">
-		</table>
 		<!-- Create a space where the user information will be displayed -->
 			<div id="price">
 			</div>

@@ -4,7 +4,7 @@
 */
 
 body {
-	background-color: rgb(255, 194, 194);
+	background-color: rgb(255, 92, 92);
 }
 
 h1 {
@@ -14,15 +14,21 @@ h1 {
 	text-align: center;
 }
 
+h4 {
+	background-color: rgb(255, 229, 229);
+	color: hsl(0, 0%, 0%);
+	padding: 4px;
+	text-align: center;
+}
 
 div {
 	
   font-weight: bold;
-  color: #050505;
+  color: #000000;
   margin: 5px;
 }
 
 #display-results{
-  background-color: #ede5ff;
+  background-color: #ffffff;
 	font-size: 20px;
 }

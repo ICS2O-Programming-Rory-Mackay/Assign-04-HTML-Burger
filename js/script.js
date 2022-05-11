@@ -6,23 +6,42 @@
 "use strict"
 
 /**
- * This function displays what type of admission the user qualifies for based on  age and day of week
+ * This function displays the subtotal, tax, and total price for a burger
  */
 function displayPrice () {
+  // constants
+  const HST = 0.13;
+  const SINGLE_PRICE = 3.00
+  const DOUBLE_PRICE = 6.00
+  const TRIPLE_PRICE = 9.00
+  const COMBO_PRICE = 3.00
+  const TOPPING_PRICE = 0.50
 	// initialize variables
-	let p = "Please make a selection above."
-  // get user input for age and day of week
-	let userAge = parseInt(document.getElementById('user-age').value)
-	let select = document.getElementById('days');
-	let days = select.options[select.selectedIndex].value;
-  	// if user age is over 95 or less than 5, display "No need to pay, it's free for you!""
-	if (userAge > 95 || userAge < 5) {
-	  message = "No need to pay, it's free for you!"
+	let subtotal = 0;
+  let pattyPrice = 0;
+  let comboPrice = 0;
+  let toppingPrice = 0;
+  // get user input for number of patty's
+	let select = document.getElementById('patty');
+	let patty = select.options[select.selectedIndex].value;
+  // get user input for number of toppings
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  let toppingAmount = checkboxes.length;
+  let toppingPrice = toppingAmount * TOPPING_PRICE;
+  // get user input for combo (yes or no)
+
+  // if patty selection == single, sizePrice == SINGLE_PRICE
+	if (patty == "single") {
+	  pattyPrice == SINGLE_PRICE
 	} 
-  // if user age is 12 to 21 OR it is Tuesday or Thursday, display "You get the student discount!"
-	else if ((days == "tuesday") || (days == "thursday")         || (userAge <= 21 && userAge >= 12)) {
-	  message = "You get the student discount!"
+  // else if patty selection == double, sizePrice == DOUBLE_PRICE
+	else if (patty == "double") {
+	  pattyPrice == DOUBLE_PRICE
 	} 
+  // otherwise pattyPrice == TRIPLE_PRICE
+  else {
+    pattyPrice == TRIPLE_PRICE
+  }
 	// if user age > 0 and equal or less than 120, display "Regular price for you!"	
 	else if (userAge > 0 && userAge <= 120) {
 	  message = "Regular price for you!"

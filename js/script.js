@@ -16,16 +16,16 @@ function displayPrice () {
   const TRIPLE_PRICE = 9.00
   const COMBO_PRICE = 3.00
   const TOPPING_PRICE = 0.50
+  const NO_TOPPING_PRICE = 0.00
 	// initialize variables
 	let subtotal = 0;
   let pattyPrice = 0;
   let comboPrice = 0;
-  let toppingPrice = 0;
   // get user input for number of patty's
 	let select = document.getElementById('patty');
 	let patty = select.options[select.selectedIndex].value;
   // get user input for number of toppings
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  let checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
   let toppingAmount = checkboxes.length;
   let toppingPrice = toppingAmount * TOPPING_PRICE;
   // get user input for combo (yes or no)
@@ -42,15 +42,23 @@ function displayPrice () {
   else {
     pattyPrice == TRIPLE_PRICE
   }
-	// if user age > 0 and equal or less than 120, display "Regular price for you!"	
-	else if (userAge > 0 && userAge <= 120) {
-	  message = "Regular price for you!"
-	}
+  // If the user selects certain toppings
+  if (topping == "lettuce" || topping == "tomato" || topping == "cheese"
+      || topping == "bacon" || topping == "pickles" || topping == "onions") {
+    toppingPrice = TOPPING_PRICE
+    // If the user doesn't choose a topping
+  } else {
+    toppingPrice = NO_TOPPING_PRICE
+  }
+  // If the user selects a combo
 
-  // otherwise display "Regular price for you!"	
-	else {
-	  message = "Please enter info to proceed."
-	}
-// Displaying results
-document.getElementById("message").innerHTML = message
+ // Calculations for Subtotal, Tax and the true total
+  subtotal = pattyPrice + toppingPrice + comboPice
+  let tax = subtotal * HST;
+  let total = subtotal + tax;
+
+  // Displaying the totals to the screen
+  document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal.toFixed(2)
+  document.getElementById("tax").innerHTML = "Tax: $" + tax.toFixed(2)
+  document.getElementById("total").innerHTML = "Total: $" + total.toFixed(2)
 }

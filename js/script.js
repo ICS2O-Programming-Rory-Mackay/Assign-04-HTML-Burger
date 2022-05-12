@@ -11,12 +11,13 @@
 function displayPrice () {
   // constants
   const HST = 0.13;
-  const SINGLE_PRICE = 3.00
-  const DOUBLE_PRICE = 6.00
-  const TRIPLE_PRICE = 9.00
-  const COMBO_PRICE = 3.00
-  const TOPPING_PRICE = 0.50
-  const NO_TOPPING_PRICE = 0.00
+  const SINGLE_PRICE = 3.00;
+  const DOUBLE_PRICE = 6.00;
+  const TRIPLE_PRICE = 9.00;
+  const COMBO_PRICE = 3.00;
+  const NO_COMBO_PRICE = 0.00;
+  const TOPPING_PRICE = 0.50;
+  const NO_TOPPING_PRICE = 0.00;
 	// initialize variables
 	let subtotal = 0;
   let pattyPrice = 0;
@@ -25,10 +26,9 @@ function displayPrice () {
 	let select = document.getElementById('patty');
 	let patty = select.options[select.selectedIndex].value;
   // get user input for number of toppings
-  let checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
   let toppingAmount = checkboxes.length;
   let toppingPrice = toppingAmount * TOPPING_PRICE;
-  // get user input for combo (yes or no)
 
   // if patty selection == single, sizePrice == SINGLE_PRICE
 	if (patty == "single") {
@@ -45,15 +45,23 @@ function displayPrice () {
   // If the user selects certain toppings
   if (topping == "lettuce" || topping == "tomato" || topping == "cheese"
       || topping == "bacon" || topping == "pickles" || topping == "onions") {
-    toppingPrice = TOPPING_PRICE
-    // If the user doesn't choose a topping
-  } else {
-    toppingPrice = NO_TOPPING_PRICE
+    toppingPrice == TOPPING_PRICE
+  }
+  // If the user doesn't choose a topping
+  else {
+    toppingPrice == NO_TOPPING_PRICE
   }
   // If the user selects a combo
+  if (document.getElementById('option-1').checked) {
+    comboPrice == COMBO_PRICE
+  }
+  // If the user doesn't choose a combo
+  else {
+    comboPrice == NO_COMBO_PRICE
+  }
 
  // Calculations for Subtotal, Tax and the true total
-  subtotal = pattyPrice + toppingPrice + comboPice
+  subtotal = pattyPrice + toppingPrice + comboPrice
   let tax = subtotal * HST;
   let total = subtotal + tax;
 

@@ -50,11 +50,11 @@ function displayPrice () {
   // If the user selects certain toppings
   if (topping == "lettuce" || topping == "tomato" || topping == "cheese"
       || topping == "bacon" || topping == "pickles" || topping == "onions") {
-    toppingPrice = TOPPING_PRICE
+    toppingPrice == TOPPING_PRICE
   }
   // If the user doesn't choose a topping
   else {
-    toppingPrice = NO_TOPPING_PRICE
+    toppingPrice == NO_TOPPING_PRICE
   }
   // If the user selects a combo
   if (document.getElementById('option-1').checked) {
@@ -66,7 +66,7 @@ function displayPrice () {
   }
 
  // Calculations for Subtotal, Tax and the true total
-  subtotal = pattyPrice + toppingPrice + comboPrice
+  subtotal = toppingPrice + pattyPrice + comboPrice
   let tax = subtotal * HST;
   let total = subtotal + tax;
 

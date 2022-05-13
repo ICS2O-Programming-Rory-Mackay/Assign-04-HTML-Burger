@@ -18,18 +18,17 @@ function displayPrice () {
   const NO_COMBO_PRICE = 0.00;
   const TOPPING_PRICE = 0.50;
   const NO_TOPPING_PRICE = 0.00;
+  
 	// initialize variables
 	let subtotal = 0;
   let pattyPrice = 0;
   let comboPrice = 0;
+  let topping = 0;
+  
   // get user input for number of patty's
 	let select = document.getElementById('patty');
 	let patty = select.options[select.selectedIndex].value;
-  // get user input for number of toppings
-  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-  let toppingAmount = checkboxes.length;
-  let toppingPrice = toppingAmount * TOPPING_PRICE;
-
+  
   // if patty selection == single, sizePrice == SINGLE_PRICE
 	if (patty == "single") {
 	  pattyPrice == SINGLE_PRICE
@@ -39,9 +38,14 @@ function displayPrice () {
 	  pattyPrice == DOUBLE_PRICE
 	} 
   // otherwise pattyPrice == TRIPLE_PRICE
-  else {
+  else if (patty == "triple") {
     pattyPrice == TRIPLE_PRICE
   }
+  // get user input for number of toppings
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  let toppingAmount = checkboxes.length;
+  let toppingPrice = toppingAmount * TOPPING_PRICE;
+  
   // If the user selects certain toppings
   if (topping == "lettuce" || topping == "tomato" || topping == "cheese"
       || topping == "bacon" || topping == "pickles" || topping == "onions") {
@@ -66,5 +70,5 @@ function displayPrice () {
   let total = subtotal + tax;
 
   // Displaying the totals to the screen
-  document.getElementById("display-message").innerHTML = "Subtotal: $" + subtotal.toFixed(2) + "Tax: $" + tax.toFixed(2) + "Total: $" + total.toFixed(2)
+  document.getElementById("display-message").innerHTML = "Your subtotal: $" + subtotal.toFixed(2) + ", your tax: $" + tax.toFixed(2) + ", your total: $" + total.toFixed(2)
 }

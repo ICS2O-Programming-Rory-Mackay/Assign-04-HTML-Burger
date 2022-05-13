@@ -26,21 +26,22 @@ function displayPrice () {
   let topping = 0;
   
   // get user input for number of patty's
-	let select = document.getElementById('patty');
-	let patty = select.options[select.selectedIndex].value;
-  
+	let selectPatty = document.getElementById('patty');
+	let patty = selectPatty.options[selectPatty.selectedIndex].value;
+ 
   // if patty selection == single, sizePrice == SINGLE_PRICE
 	if (patty == "single") {
-	  pattyPrice == SINGLE_PRICE
+	  pattyPrice = SINGLE_PRICE
 	} 
   // else if patty selection == double, sizePrice == DOUBLE_PRICE
 	else if (patty == "double") {
-	  pattyPrice == DOUBLE_PRICE
+	  pattyPrice = DOUBLE_PRICE
 	} 
   // otherwise pattyPrice == TRIPLE_PRICE
   else if (patty == "triple") {
-    pattyPrice == TRIPLE_PRICE
+    pattyPrice = TRIPLE_PRICE
   }
+
   // get user input for number of toppings
   let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
   let toppingAmount = checkboxes.length;
@@ -49,19 +50,19 @@ function displayPrice () {
   // If the user selects certain toppings
   if (topping == "lettuce" || topping == "tomato" || topping == "cheese"
       || topping == "bacon" || topping == "pickles" || topping == "onions") {
-    toppingPrice == TOPPING_PRICE
+    toppingPrice = TOPPING_PRICE
   }
   // If the user doesn't choose a topping
   else {
-    toppingPrice == NO_TOPPING_PRICE
+    toppingPrice = NO_TOPPING_PRICE
   }
   // If the user selects a combo
   if (document.getElementById('option-1').checked) {
-    comboPrice == COMBO_PRICE
+    comboPrice = COMBO_PRICE
   }
   // If the user doesn't choose a combo
   else {
-    comboPrice == NO_COMBO_PRICE
+    comboPrice = NO_COMBO_PRICE
   }
 
  // Calculations for Subtotal, Tax and the true total

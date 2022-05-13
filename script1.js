@@ -8,7 +8,7 @@
 /**
  * This function displays the subtotal, tax, and total price for a burger
  */
-function displayPrice () {
+function display_____ () {
   // constants
   const HST = 0.13;
   const SINGLE_PRICE = 3.00;
@@ -66,5 +66,7 @@ function displayPrice () {
   let total = subtotal + tax;
 
   // Displaying the totals to the screen
-  document.getElementById("display-message").innerHTML = "Subtotal: $" + subtotal.toFixed(2) + "Tax: $" + tax.toFixed(2) + "Total: $" + total.toFixed(2)
+  document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal.toFixed(2)
+  document.getElementById("tax").innerHTML = "Tax: $" + tax.toFixed(2)
+  document.getElementById("total").innerHTML = "Total: $" + total.toFixed(2)
 }
